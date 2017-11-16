@@ -9,3 +9,4 @@ node_modules
 *.pyc
 tmp
 .python-version
+bundle.js
