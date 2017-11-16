@@ -8,9 +8,10 @@ mini playground for react
     - have Python2/Python3 on your mac.
 
   ### Uder miniPG/Application/static  (Prepare frontend)
-    - cd into miniPG/Application/static   do: npm install  (This will install all the dependences in package.json)
+    - cd miniPG/Application/static   
+    - npm install  (This will install all the dependences in package.json)
     - npm run watch  (This will compile your react code into weibo/Application/static/dist/bundle.js)
-    - Oepn another Tab
+    - Opend a new tab and do following step
 
   ### Under miniPG/  (Prepare backend)
     - pip install -r requirement.txt
