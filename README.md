@@ -1,5 +1,5 @@
 # miniPG
-mini playground for react
+Minimal playground for react + redux + Flask
 
 ## How to start 
   ### Prepare environment
