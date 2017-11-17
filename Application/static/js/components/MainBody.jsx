@@ -24,12 +24,14 @@ const MainBody = () => (
     <div style={panel}>
         <Grid celled>
             <Grid.Row>
-              <Grid.Column width={3} only='tablet computer' as={Form}>
+              <Grid.Column tablet={5} computer={4} only='tablet computer' as={Form}>
                 <SideSelector />
               </Grid.Column>
-              <Grid.Column width={13} style={ImageBlock} centered>
+              <Grid.Column mobile={16}tablet={11} computer={12} style={ImageBlock}>
+                <PaginationMenu />
                 <ImageGallery />
                 <PaginationMenu />
+
               </Grid.Column>
             </Grid.Row>
         </Grid>
