@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card as CardComp, Icon, Image } from 'semantic-ui-react'
+import { Card as CardComp, Icon, Image, Button } from 'semantic-ui-react'
 
 
 const price = {
@@ -8,10 +8,8 @@ const price = {
   fontSize:'15px',
 }
 
-
-
 const Card = () => (
-  <CardComp>
+  <CardComp  as={Button} centered>
     <Image src='static/assets/images/elliot.jpg' />
     <CardComp.Content extra>
       <CardComp.Header>
