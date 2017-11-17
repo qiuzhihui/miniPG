@@ -1,14 +1,10 @@
 import React from 'react'
-import ImageGallery from './ImageGallery'
-import BodyLayout from './BodyLayout'
-
+import MainBody from './MainBody'
 
 const App = () => (
   <div>
-    <ImageGallery />
-    <BodyLayout />
+    <MainBody />
   </div>
-
 )
 
 export default App

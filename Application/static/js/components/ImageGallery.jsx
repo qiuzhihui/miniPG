@@ -1,27 +1,22 @@
 import React from 'react'
 import { Card } from 'semantic-ui-react'
-import CardExampleCardProps from './CardExampleCardProps'
+import ImageCard from './ImageCard'
+import { Grid, Image } from 'semantic-ui-react'
+
 
 const group = {
-    margin: '15px',
-}
-
-const panel = {
-    width: '70%',
-    margin: '16px',
-    border: '1px solid',
-    borderColor: '#d6d7da',
-    borderRadius: '5px',
+    margin: '10px',
+    textAlign: 'left',
 }
 
 const ImageGallery = () => (
-    <div style={panel}>
-      <Card.Group style={group}>
-          {Array(6).fill(0).map((el, i) =>
-            <CardExampleCardProps key={i} />
-          )}
-      </Card.Group>
-    </div>
+    <Card.Group style={group}>
+      {Array(6).fill(0).map((el, i) =>
+        <ImageCard key={i} />
+      )}
+    </Card.Group>
 )
 
 export default ImageGallery
+
+
