@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card } from 'semantic-ui-react'
 import { Grid, Form, Image } from 'semantic-ui-react'
-import ImageCard from './ImageCard'
 import ImageGallery from './ImageGallery'
 import PaginationMenu from './PaginationMenu'
 import SideSelector from './SideSelector'
@@ -31,7 +30,6 @@ const MainBody = () => (
                 <PaginationMenu />
                 <ImageGallery />
                 <PaginationMenu />
-
               </Grid.Column>
             </Grid.Row>
         </Grid>

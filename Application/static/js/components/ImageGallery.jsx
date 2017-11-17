@@ -1,7 +1,7 @@
 import React from 'react'
-import { Card } from 'semantic-ui-react'
-import ImageCard from './ImageCard'
-import { Grid, Image } from 'semantic-ui-react'
+import { Card as CardComp} from 'semantic-ui-react'
+import Card from './Card'
+import CardWraper from './CardWraper'
 
 
 const group = {
@@ -10,11 +10,11 @@ const group = {
 }
 
 const ImageGallery = () => (
-    <Card.Group style={group}>
+    <CardComp.Group style={group}>
       {Array(6).fill(0).map((el, i) =>
-        <ImageCard key={i} />
+        <CardWraper key={i} />
       )}
-    </Card.Group>
+    </CardComp.Group>
 )
 
 export default ImageGallery
