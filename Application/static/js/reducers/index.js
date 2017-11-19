@@ -1,8 +1,15 @@
 import { combineReducers } from 'redux'
-import test from './test'
+import todos from './todos'
+import offset from './offset'
+import scrollRef from './scrollRef'
+import visibilityFilter from './visibilityFilter'
+
 
 const todoApp = combineReducers({
-    test
+  todos,
+  visibilityFilter,
+  offset,
+  scrollRef,
 })
 
 export default todoApp

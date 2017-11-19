@@ -13,6 +13,7 @@ const group = {
 
 const panel = {
     margin: '16px',
+    display: 'inline',
 }
 
 const ImageBlock = {
