@@ -28,21 +28,24 @@ const miles = {
 }
 
 export default class CardWraper extends Component {
+  constructor(props) {
+    super(props)
+  }
 
   render() {
     const card = (
       <CardComp as={Button} centered>
-        <Image src='static/assets/images/elliot.jpg' />
+        <Image src={this.props.carData.imageURL} />
         <CardComp.Content extra style={content}>
           <CardComp.Header style={header}>
-            Mini Cooper 2003
+            {this.props.carData.carType}
           </CardComp.Header>
           <CardComp.Meta style={meta}>
             <span style={miles}>
-              14k miles
+              {this.props.carData.milage} miles
             </span>
             <b style={price}>
-              $15000
+              ${this.props.carData.price}
             </b>
           </CardComp.Meta>
         </CardComp.Content>
