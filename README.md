@@ -1,5 +1,6 @@
 # miniPG
 Minimal playground for React + Redux + Flask
+We uses Semantic UI as our styleGuide https://react.semantic-ui.com
 
 ## How to start 
   ### ==Prepare environment==
