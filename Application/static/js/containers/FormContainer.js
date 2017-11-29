@@ -20,7 +20,7 @@ class FormContainer extends Component {
             interiorColorOPtion: ['Black', 'White', 'Grey', 'Other'],
             interiorColor: '',
             outsideColorOPtion: ['Black', 'White', 'Grey', 'Red', 'Blue', 'Other'],
-            outsiderColor: '',
+            outsideColor: '',
             brandOPtion: ['Benz', 'BMW', 'Audi', 'Jaguar', 'Blue', 'Lexus', 'Porsche', 'LandRover', 'VW', 'Other'],
             brand: '',
             madeYearOption: [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
@@ -111,7 +111,7 @@ class FormContainer extends Component {
             fuelType: this.state.fuelType,
             madeYear: this.state.madeYear,
             brand: this.state.brand,
-            outsideColor: this.state.outsiderColor,
+            outsideColor: this.state.outsideColor,
             interiorColor: this.state.interiorColor,
             autoManual: this.state.autoManual,
             highwayMPG: this.state.highwayMPG,
@@ -216,7 +216,7 @@ class FormContainer extends Component {
                     placeholder={'Choose outside color'}
                     controlFunc={this.handleOutsideColorChange}
                     options={this.state.outsideColorOPtion}
-                    selectedOption={this.state.outsiderColor} />
+                    selectedOption={this.state.outsideColor} />
                 <Select
                     name={'brand'}
                     placeholder={'Choose brand'}
@@ -238,6 +238,12 @@ class FormContainer extends Component {
                     name={'description'}
                     controlFunc={this.handleDescriptionChange}
                     placeholder={'Please be thorough in your descriptions'} />
+
+                <input type="file" className="photo" id="photo1" />
+                <input type="file" className="photo" id="photo2" />
+                <input type="file" className="photo" id="photo3" />
+                <input type="file" className="photo" id="photo4" />
+
                 <input
                     type="submit"
                     className="btn btn-primary float-right"
@@ -245,6 +251,7 @@ class FormContainer extends Component {
                 <button
                     className="btn btn-link float-left"
                     onClick={this.handleClearForm}>Clear form</button>
+
             </form>
 
             </div>
