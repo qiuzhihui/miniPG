@@ -28,8 +28,9 @@ def show_car_page():
             if not isinstance(data, dict):
                data = json.loads(data)
             result = controller.set_car(data)
+    result = {"data": result}
     print(result)
-    return str(result)
+    return json.dumps(result)
 
 @app.route("/user",  methods = ["GET", "POST", "PUT"])
 def show_user_page():

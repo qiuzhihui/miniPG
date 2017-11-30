@@ -26,7 +26,7 @@ class FormContainer extends Component {
             madeYearOption: [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
             madeYear: '',
             description: '',
-            added_car: []
+            addedCar: []
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleClearForm = this.handleClearForm.bind(this);
@@ -86,6 +86,10 @@ class FormContainer extends Component {
     handleDescriptionChange(e) {
         this.setState({ description: e.target.value }, () => console.log('description', this.state.description));
     }
+    handleAddedCarChange(e) {
+        this.setState({ added: e.target.value }, () => console.log('description', this.state.description));
+
+    }
     handleClearForm(e) {
         e.preventDefault();
         this.setState({
@@ -136,14 +140,19 @@ class FormContainer extends Component {
         });
         this.handleClearForm(e);
 
-        var result = fetch('http://0.0.0.0:5000/car', {
+        fetch('http://0.0.0.0:5000/car', {
             method: 'GET',
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-            }});
-        console.log(result)
+            }})
+            .then(response => response.json())
+            .then((responseJson)=> {
+                console.log(responseJson);
+                console.log(responseJson.data);
+                return responseJson;
+            });
 
     }
     render() {
@@ -239,10 +248,10 @@ class FormContainer extends Component {
                     controlFunc={this.handleDescriptionChange}
                     placeholder={'Please be thorough in your descriptions'} />
 
-                <input type="file" className="photo" id="photo1" />
-                <input type="file" className="photo" id="photo2" />
-                <input type="file" className="photo" id="photo3" />
-                <input type="file" className="photo" id="photo4" />
+                <input type="file" className="photo" ref="photo1" />
+                <input type="file" className="photo" ref="photo2" />
+                <input type="file" className="photo" ref="photo3" />
+                <input type="file" className="photo" ref="photo4" />
 
                 <input
                     type="submit"
