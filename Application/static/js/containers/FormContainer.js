@@ -150,11 +150,15 @@ class FormContainer extends Component {
             .then(response => response.json())
             .then((responseJson)=> {
                 console.log(responseJson);
-                console.log(responseJson.data);
+                this.setState({addedCar: responseJson.data});
                 return responseJson;
             });
 
     }
+
+    eachCar(car, i ){ return(<label key={i}>{car.id}</label>);
+    }
+
     render() {
         return (
             <div>
@@ -262,7 +266,9 @@ class FormContainer extends Component {
                     onClick={this.handleClearForm}>Clear form</button>
 
             </form>
-
+            <div>
+                {this.state.addedCar.map(this.eachCar)}
+                </div>
             </div>
         );
     }
