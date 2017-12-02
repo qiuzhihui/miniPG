@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import SingleInput from '../components/SingleInput';
 import TextArea from '../components/TextArea';
 import Select from '../components/Select';
+import Test from '../components/test';
+import ImageUpload from '../components/PhotoInput';
 
 class FormContainer extends Component {
     constructor(props) {
@@ -26,7 +28,8 @@ class FormContainer extends Component {
             madeYearOption: [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
             madeYear: '',
             description: '',
-            addedCar: []
+            addedCar: [],
+            pictures: []
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleClearForm = this.handleClearForm.bind(this);
@@ -43,10 +46,14 @@ class FormContainer extends Component {
         this.handleBrandChange = this.handleBrandChange.bind(this);
         this.handleMadeYearChange = this.handleMadeYearChange.bind(this);
         this.handleFuelTypeChange = this.handleFuelTypeChange.bind(this);
+        this.handleAddedPictureChange = this.handleAddedPictureChange.bind(this);
+        this.handleAddedCarChange = this.handleAddedCarChange.bind(this);
+    }
+
+    componentDidMount() {
 
     }
-    componentDidMount() {
-    }
+
     handleFuelTypeChange(e) {
         this.setState({ fuelType: e.target.value }, () => console.log('fuelType', this.state.fuelType));
     }
@@ -90,6 +97,23 @@ class FormContainer extends Component {
         this.setState({ added: e.target.value }, () => console.log('description', this.state.description));
 
     }
+    handleAddedPictureChange(picture) {
+        var reader = new FileReader();
+
+        reader.onload = function(readerEvt) {
+            var binaryString = readerEvt.target.result;
+            console.log(btoa(binaryString));
+        };
+
+        reader.readAsBinaryString(picture[0]);
+
+        console.log(reader.result);
+
+        this.setState({
+            pictures: this.state.pictures.concat(picture),
+        }, () => console.log('image', this.state.pictures));
+
+    }
     handleClearForm(e) {
         e.preventDefault();
         this.setState({
@@ -106,6 +130,7 @@ class FormContainer extends Component {
             brand: '',
             madeYear: '',
             description: '',
+            pictures:[]
         });
     }
     handleFormSubmit(e) {
@@ -124,6 +149,7 @@ class FormContainer extends Component {
             kbbPrice: this.state.kbbPrice,
             price: this.state.price,
             name: this.state.name,
+            pictures: this.state.pictures,
             description: this.state.description,
         };
 
@@ -243,6 +269,9 @@ class FormContainer extends Component {
                     controlFunc={this.handleMadeYearChange}
                     options={this.state.madeYearOption}
                     selectedOption={this.state.madeYear} />
+                <ImageUpload
+                    onChange={this.handleAddedPictureChange}
+                />
                 <TextArea
                     title={'Please enter any other car descriptions here.'}
                     rows={5}
@@ -251,12 +280,6 @@ class FormContainer extends Component {
                     name={'description'}
                     controlFunc={this.handleDescriptionChange}
                     placeholder={'Please be thorough in your descriptions'} />
-
-                <input type="file" className="photo" ref="photo1" />
-                <input type="file" className="photo" ref="photo2" />
-                <input type="file" className="photo" ref="photo3" />
-                <input type="file" className="photo" ref="photo4" />
-
                 <input
                     type="submit"
                     className="btn btn-primary float-right"
