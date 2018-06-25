@@ -7,7 +7,7 @@ We uses Semantic UI as our styleGuide https://react.semantic-ui.com
   ### ==Prepare environment==
     - clone this repo
     - brew install npm
-    - have Python2/Python3 on your mac.
+    - have Python3 on your mac.
 
   ### ==Prepare frontend==
     - cd miniPG/Application/static   
@@ -18,5 +18,5 @@ We uses Semantic UI as our styleGuide https://react.semantic-ui.com
   ### ==Prepare backend==
     - cd miniPG/
     - pip install -r requirement.txt
-    - python app.py
+    - python3 app.py
     - go to http://localhost:5000/ and enjoy

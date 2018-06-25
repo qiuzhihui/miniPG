@@ -25,7 +25,7 @@ const meta = {
 
 const miles = {
   float:'left',
-}
+};
 
 export default class CardWraper extends Component {
   constructor(props) {
